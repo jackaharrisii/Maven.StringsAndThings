@@ -20,18 +20,23 @@ public class ContainsEqualNumberOfIsAndNotTest {
     @Test
     public void equalIsNotTest1(){
         Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("This is not");
-        Assert.assertTrue(actual);
+        Assert.assertFalse(actual);
     }
 
     @Test
     public void equalIsNotTest2(){
         Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("This is notnot");
-        Assert.assertFalse(actual);
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void equalIsNotTest3(){
         Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("noisxxnotyynotxisi");
         Assert.assertTrue(actual);
+    }
+    @Test
+    public void equalIsNotTest4(){
+        Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("noisxxnotyynotxisisn");
+        Assert.assertFalse(actual);
     }
 }

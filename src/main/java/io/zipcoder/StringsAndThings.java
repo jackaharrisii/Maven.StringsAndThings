@@ -34,7 +34,8 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        String output = base.replace(remove,"");
+        return output;
     }
 
     /**
@@ -44,9 +45,15 @@ public class StringsAndThings {
      * example : containsEqualNumberOfIsAndNot("This is not")  // Should return false
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
+     *           added a fourth test of "noisxxnotyynotxisis"
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        int countIs = ("0" + input + "0").split("is").length-1;
+        int countNot = ("0" + input + "0").split("not").length-1;
+
+        boolean output = countIs == countNot;
+        System.out.print(countIs + " counts of is and " + countNot + " counts of not");
+        return output;
     }
 
     /**

@@ -64,7 +64,22 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        //no parameter describes what should be returned if there are no g's
+        //i will interpret the lack of any g's as g is happy, because they're all off somewhere else at a party or something together
+        //if lonely g anywhere, return false
+        //due to the vague criteria, the above will cover all described scenarios
+        char[] charInput = input.toCharArray();
+        boolean isHappy = true;
+        int i = 0;
+        while (i < charInput.length){
+            if (charInput[i] == 'g' && charInput[i+1] != 'g') {
+                isHappy = false;
+                i += 2;
+            }
+            else if (charInput[i] == 'g' && charInput[i+1] == 'g') {i += 2;}
+            else {i++;}
+        }
+        return isHappy;
     }
 
 
@@ -76,6 +91,13 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        char[] charInput = input.toCharArray();
+        int output = 0;
+        for (int i = 1; i < charInput.length; i++){
+            if(charInput[i] == charInput[i-1] && charInput[i] == charInput[i+1]){
+                output++;
+            }
+        }
+        return output;
     }
 }
